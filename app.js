@@ -6,6 +6,10 @@ var logger = require('morgan');
 
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
+var shopRouter = require('./routes/shop');
+var goodsRouter = require('./routes/goods');
+var serviceRouter = require('./routes/service');
+var memberRouter = require('./routes/member');
 
 require("./dao/database.js")// 链接数据库
 var app = express();
@@ -23,6 +27,10 @@ app.use(express.static(path.join(__dirname, 'public')));
 // 路由器
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
+app.use('/shop', shopRouter);
+app.use('/goods', goodsRouter);
+app.use('/service', serviceRouter);
+app.use('/member', memberRouter);
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {

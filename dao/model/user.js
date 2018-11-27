@@ -1,74 +1,55 @@
 var mongoose = require('mongoose');
 var Schema = mongoose.Schema;
-
-var MovieSchema = new Schema({
-  id: {
+//用户管理
+var userSchema = new Schema({
+  // 登录名
+  userAcount: {
     type: String
   },
-  // 电影海报图
-  movieImg: {
+  // 密码
+  userPwd: {
     type: String
   },
-  // 中文名
-  title: {
+  // 手机号
+  userPhone: {
     type: String
   },
-  // 原名
-  originalTitle: {
+  // 邮件
+  userMail: {
     type: String
   },
-  // 得分
-  average: {
+  // 姓名
+  userName: {
     type: String
   },
-  // 星星
-  stars: {
-    type: String
+  // 角色，平台管理员 0，门店管理员 1
+  userType: {
+    type: Number
   },
-  // 评分人数
-  ratingsCount: {
-    type: String
+  // 状态，申请中：0、可用：1、不可用：2
+  userStatus: {
+    type: Number
   },
-  // 想看人数
-  wishCount: {
-    type: String
-  },
-  // 看过人数
-  collectCount: {
-    type: String
-  },
-
-  // 片长
-  durations: {
-    type: String
-  },
-  // 影片类型
-  genres: {
-    type: String
-  },
-  // 年代
-  year: {
-    type: String
-  },
-  // 主演
-  casts: {
-    type: String
-  },
-  // 导演
-  directors: {
-    type: String
-  },
-  // 简介
-  summary: String,
-  // 视频
-  vd: String,
-  imgs: [{
+  // 关联门店ID
+  shopId: {
     type: Schema.Types.ObjectId,
-    ref: "imgs"
-  }],
-  state: {
-    type: String,
+    ref: "shop"
+  },
+  // 关联商品ID
+  goodsId: {
+    type: Schema.Types.ObjectId,
+    ref: "goods"
+  },
+  // 关联服务ID
+  serviceId: {
+    type: Schema.Types.ObjectId,
+    ref: "service"
+  },
+  // 关联会员ID
+  memberId: {
+    type: Schema.Types.ObjectId,
+    ref: "member"
   }
 });
 
-mongoose.model("movies", MovieSchema, "movies");
+mongoose.model("user", userSchema, "user");
