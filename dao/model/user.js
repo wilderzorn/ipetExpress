@@ -44,11 +44,6 @@ var userSchema = new Schema({
   serviceId: {
     type: Schema.Types.ObjectId,
     ref: "service"
-  },
-  // 关联会员ID
-  memberId: {
-    type: Schema.Types.ObjectId,
-    ref: "member"
   }
 });
 
