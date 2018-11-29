@@ -14,6 +14,10 @@ var shopSchema = new Schema({
   shopLicenceImg: {
     type: String
   },
+  // 营业地址
+  shopAdd: {
+    type: String
+  },
   // 定位
   shopLocation: {
     type: String
@@ -35,7 +39,7 @@ var shopSchema = new Schema({
     type: Number
   },
   // 佣金比例
-  shopImg: {
+  shopCommission: {
     type: Number
   },
   // 店员属性, [{姓名：'',职级：'',联系电话：''}]
