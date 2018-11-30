@@ -36,7 +36,7 @@ var shopSchema = new Schema({
   },
   // 特色
   shopFeature: {
-    type: Number
+    type: String
   },
   // 佣金比例
   shopCommission: {
