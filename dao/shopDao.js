@@ -25,3 +25,15 @@ module.exports.addShop = async ({ shopName, shopLicenceNum, shopLicenceImg, shop
 module.exports.setShopByIdAsync = async (result) => {
   return await mongoose.model("shop").find(result);
 }
+
+
+
+module.exports.addOneEmployeeById = async (result) => {
+  let { shopId, shopEmployee } = result
+  return await mongoose.model("shop").find({ _id: shopId }).update({ shopEmployee: shopEmployee })
+}
+
+module.exports.updataShopById = async (result) => {
+  let { _id, shopName, shopLicenceNum, shopAdd, shopLocation, shopCorporate, shopTel, shopFeature, shopCommission } = result
+  return await mongoose.model("shop").find({ _id }).update({ shopName, shopLicenceNum, shopAdd, shopLocation, shopCorporate, shopTel, shopFeature, shopCommission })
+}
