@@ -2,6 +2,8 @@ var mongoose = require('mongoose');
 mongoose.Promise = require('bluebird');
 require("./model/user.js")
 require("./model/service.js")
+require("./model/shop.js")
+
 var dbURI = 'mongodb://localhost/ipet';
 
 mongoose.connect(dbURI, { useNewUrlParser: true });
