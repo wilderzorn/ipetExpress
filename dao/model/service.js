@@ -30,11 +30,11 @@ var serviceSchema = new Schema({
   },
   // 服务员等级，普通，高级价格不同
   serviceLevel: {
-    type: Number
+    type: String
   },
   // 价格,基准价格，会员价和活动价都以它为基准
   servicePrice: {
-    type: Number
+    type: String
   },
   // 服务
   serviceImg: [
