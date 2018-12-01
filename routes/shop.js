@@ -8,9 +8,9 @@ router.get('/', function (req, res, next) {
 });
 
 // 所有门店
-// router.get('/getAllShopByPageAsync', async function (req, res, next) {
-//   res.send(await getAllShopByPage(req.query))
-// });
+router.get('/getAllShopByPageAsync', async function (req, res, next) {
+  res.send(await getAllShopByPage(req.query))
+});
 
 //  增加门店
 router.get('/addShopAsync', async function (req, res, next) {
