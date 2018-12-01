@@ -19,6 +19,7 @@ module.exports.getAllPetsByPage = async ({ curPage, eachPage }) => {
     return result;
 }
 
-module.exports.addPetAsync = async () => {
-    console.log("add")
+module.exports.addPet = async ({ petsName, petsSpecies, petsType, petsGender, petsPrice, petsImg, petsColor, petsBirthday, petsCharacter }) => {
+    let result = { petsName, petsSpecies, petsType, petsGender, petsPrice: Number(petsPrice), petsImg, petsColor, petsBirthday, petsCharacter }
+    return await mongoose.model("pets").create(result);
 }

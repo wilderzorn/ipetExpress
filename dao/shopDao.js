@@ -19,3 +19,12 @@ module.exports.getAllShopByPage = async ({ curPage, eachPage }) => {
   // .populate("classId")
   return result;
 }
+
+module.exports.addShop = async ({ shopName, shopLicenceNum, shopLicenceImg, shopAdd, shopLocation, shopCorporate, shopTel, shopImg, shopFeature, shopCommission }) => {
+  let result = { shopName, shopLicenceNum, shopLicenceImg, shopAdd, shopLocation, shopCorporate, shopTel, shopImg, shopFeature, shopCommission: Number(shopCommission) }
+  return await mongoose.model("shop").create(result);
+}
+
+module.exports.setShopByIdAsync = async (result) => {
+  return await mongoose.model("shop").find(result);
+}
