@@ -1,7 +1,5 @@
 const mongoose = require("mongoose")
 
-<<<<<<< HEAD
-=======
 
 module.exports.getAllgoods = async ({ curPage, eachPage }) => {
     const result = {
@@ -48,4 +46,3 @@ module.exports.removeGoods = async (removeId) => {
     // console.log(removeId)
     return await mongoose.model("goods").remove({ _id: removeId.removeId });//根据id删除相应的数据
 }
->>>>>>> be4bd7c3f75b7822c12dc497d0b4f76cfb3f2bcf
