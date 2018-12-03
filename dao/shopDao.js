@@ -1,9 +1,6 @@
 const mongoose = require("mongoose")
 
 module.exports.getAllShopByPage = async ({ curPage, eachPage }) => {
-  console.log(123123123);
-  
-  // console.log({ curPage, eachPage });
   let result = {
     curPage: Number(curPage),
     eachPage: Number(eachPage)
@@ -28,8 +25,6 @@ module.exports.addShop = async ({ shopName, shopLicenceNum, shopLicenceImg, shop
 module.exports.setShopByIdAsync = async (result) => {
   return await mongoose.model("shop").find(result);
 }
-
-
 
 module.exports.addOneEmployeeById = async (result) => {
   let { shopId, shopEmployee } = result

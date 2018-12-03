@@ -1,9 +1,6 @@
 const mongoose = require("mongoose")
 
 module.exports.getAllPetsByPage = async ({ curPage, eachPage }) => {
-    console.log(123123123);
-
-    console.log({ curPage, eachPage });
     let result = {
         curPage: Number(curPage),
         eachPage: Number(eachPage)
