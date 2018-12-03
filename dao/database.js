@@ -1,11 +1,13 @@
 var mongoose = require('mongoose');
 mongoose.Promise = require('bluebird');
 
+require("./model/user.js")
 require("./model/pets.js")
 require("./model/goods.js")
 require("./model/user.js")
 require("./model/service.js")
 require("./model/shop.js")
+require("./model/imgs.js")
 
 var dbURI = 'mongodb://localhost/ipet';
 

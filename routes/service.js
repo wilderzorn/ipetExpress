@@ -6,9 +6,7 @@ const { getAllServicesByPage, addServices, upDateServices, upDateServicesById, r
 var { uploadFile } = require("../util/upload.js");
 
 /* GET users listing. */
-router.get('/', function (req, res, next) {
-  res.send('respond with a resource');
-});
+
 
 //列表
 // router.get('/getAllServices', async function (req, res, next) {
