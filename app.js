@@ -11,6 +11,7 @@ var petsRouter = require('./routes/pets')
 var goodsRouter = require('./routes/goods');
 var serviceRouter = require('./routes/service');
 var memberRouter = require('./routes/member');
+var imgsRouter = require('./routes/imgs');
 
 require("./dao/database.js")// 链接数据库
 var app = express();
@@ -33,6 +34,7 @@ app.use('/goods', goodsRouter);
 app.use('/service', serviceRouter);
 app.use('/member', memberRouter);
 app.use('/pets', petsRouter);
+app.use('/imgs', imgsRouter);
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {
