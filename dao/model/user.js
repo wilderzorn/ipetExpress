@@ -31,20 +31,25 @@ var userSchema = new Schema({
     type: Number
   },
   // 关联门店ID
-  shopId: {
+  shopId: [{
     type: Schema.Types.ObjectId,
     ref: "shop"
-  },
+  }],
   // 关联商品ID
-  goodsId: {
+  goodsId: [{
     type: Schema.Types.ObjectId,
     ref: "goods"
-  },
+  }],
   // 关联服务ID
-  serviceId: {
+  serviceId: [{
     type: Schema.Types.ObjectId,
     ref: "service"
-  }
+  }],
+  // 关联宠物
+  petId: [{
+    type: Schema.Types.ObjectId,
+    ref: "pets"
+  }]
 });
 
 mongoose.model("users", userSchema, "users");

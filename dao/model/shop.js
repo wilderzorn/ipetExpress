@@ -45,7 +45,22 @@ var shopSchema = new Schema({
   // 店员属性, [{姓名：'',职级：'',联系电话：''}]
   shopEmployee: [
     { empName: '', empLevel: '', empPhone: '' }
-  ]
+  ],
+  // 关联商品ID
+  goodsId: [{
+    type: Schema.Types.ObjectId,
+    ref: "goods"
+  }],
+  // 关联服务ID
+  serviceId: [{
+    type: Schema.Types.ObjectId,
+    ref: "service"
+  }],
+  // 关联宠物
+  petId: [{
+    type: Schema.Types.ObjectId,
+    ref: "pets"
+  }]
 });
 
 mongoose.model("shop", shopSchema, "shop");

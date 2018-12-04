@@ -23,7 +23,11 @@ module.exports.addShop = async ({ shopName, shopLicenceNum, shopLicenceImg, shop
 }
 
 module.exports.setShopByIdAsync = async (result) => {
-  return await mongoose.model("shop").find(result);
+  return await mongoose.model("shop")
+    .find(result)
+    .populate("goodsId")
+    .populate("petId")
+    .populate("serviceId");
 }
 
 module.exports.addOneEmployeeById = async (result) => {
@@ -34,4 +38,9 @@ module.exports.addOneEmployeeById = async (result) => {
 module.exports.updataShopById = async (result) => {
   let { _id, shopName, shopLicenceNum, shopAdd, shopLocation, shopCorporate, shopTel, shopFeature, shopCommission } = result
   return await mongoose.model("shop").find({ _id }).update({ shopName, shopLicenceNum, shopAdd, shopLocation, shopCorporate, shopTel, shopFeature, shopCommission })
+}
+
+module.exports.addGoodsForShop = async (result) => {
+  let { goodsId, _id } = result;
+  return await mongoose.model("shop").updateOne({ _id }, { $push: { goodsId } })
 }

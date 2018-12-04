@@ -1,6 +1,6 @@
 var express = require('express');
 var router = express.Router();
-var { getAllShopByPage, addShop, setShopByIdAsync, addOneEmployeeById, updataShopById } = require('../dao/shopDao.js')
+var { addGoodsForShop, getAllShopByPage, addShop, setShopByIdAsync, addOneEmployeeById, updataShopById } = require('../dao/shopDao.js')
 
 /* GET users listing. */
 router.get('/', function (req, res, next) {
@@ -28,5 +28,10 @@ router.post('/addOneEmployeeByIdAsync', async function (req, res, next) {
 router.post('/updataShopByIdAsync', async function (req, res, next) {
   res.send(await updataShopById(req.body))
 });
+// 通过ID修改门店
+router.post('/addGoodsForShopAsync', async function (req, res, next) {
+  res.send(await addGoodsForShop(req.body))
+});
+
 
 module.exports = router;

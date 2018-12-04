@@ -1,6 +1,6 @@
 var express = require('express');
 var router = express.Router();
-const { login, reg, usersListByPage, upDateUsers, removeUsers, flatLogin, authorizerByPage, authorizerUsers } = require("../dao/userDao.js")
+const { login, reg, usersListByPage, upDateUsers, removeUsers, flatLogin, authorizerByPage, authorizerUsers, getAllUser } = require("../dao/userDao.js")
 /* GET users listing. */
 router.get('/', function (req, res, next) {
   res.send('respond with a resource');
@@ -39,5 +39,10 @@ router.post('/authorizerUsers', async function (req, res, next) {
 //删除
 router.post('/removeUsers', async function (req, res, next) {
   res.send(await removeUsers(req.body));
+});
+
+//获取门店管理员下所有的信息
+router.get('/getAllUser', async function (req, res, next) {
+  res.send(await getAllUser(req.query));
 });
 module.exports = router;
