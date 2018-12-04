@@ -47,4 +47,4 @@ var userSchema = new Schema({
   }
 });
 
-mongoose.model("user", userSchema, "user");
+mongoose.model("users", userSchema, "users");
