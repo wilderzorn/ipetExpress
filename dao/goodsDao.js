@@ -19,11 +19,15 @@ module.exports.getAllgoods = async ({ curPage, eachPage }) => {
         })
     return result;
 }
-module.exports.getAddtodo = async ({ goodsName, goodsType, goodsMaterial, goodsCanFor, goodsOnlyFor, goodsSize, goodsTaste, goodsSpecial, goodsRegion, goodsDate, goodsTime, goodsSupplier, goodsIntro, goodsPrice }) => {
-    let result = { goodsName, goodsType, goodsMaterial, goodsCanFor, goodsOnlyFor, goodsSize, goodsTaste, goodsSpecial, goodsRegion, goodsDate, goodsTime, goodsSupplier, goodsIntro, goodsPrice: Number(goodsPrice) }
-    // console.log(result);
-    return await mongoose.model("goods").create(result);
+module.exports.getAddtodo = async (form) => {
+    // console.log(form)
+    return await mongoose.model("goods").create(form);//find里面是找寻条件，找到键是—id值是传过来的id，就找到了对应的数据
 }
+// module.exports.getAddtodo = async ({ goodsName, goodsType, goodsMaterial, goodsCanFor, goodsOnlyFor, goodsSize, goodsTaste, goodsSpecial, goodsRegion, goodsDate, goodsTime, goodsSupplier, goodsIntro, goodsPrice,goodsImg }) => {
+//     let result = { goodsName, goodsType, goodsMaterial, goodsCanFor, goodsOnlyFor, goodsSize, goodsTaste, goodsSpecial, goodsRegion, goodsDate, goodsTime, goodsSupplier, goodsIntro, goodsPrice: Number(goodsPrice),goodsImg }
+//     console.log(result);
+//     return await mongoose.model("goods").create(result);
+// }
 module.exports.updateGoods = async (updateId) => {
     // console.log(updateId)
     return await mongoose.model("goods").find({ _id: updateId.updateId });//find里面是找寻条件，找到键是—id值是传过来的id，就找到了对应的数据

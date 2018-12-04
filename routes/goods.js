@@ -12,9 +12,9 @@ router.get('/getAllgoods', async function (req, res, next) {
   res.send(await getAllgoods(req.query))
 });
 //往数据库放数据
-router.get('/getAddtodo', async function (req, res, next) {
-  res.send(await getAddtodo(req.query))
-  // console.log(req.query);
+router.post('/getAddtodo', async function (req, res, next) {
+  // console.log(req.body);
+  res.send(await getAddtodo(req.body))
 
 });
 //找到修改id相应的数据

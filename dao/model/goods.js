@@ -60,7 +60,7 @@ var goodSchema = new Schema({
   },
   // 图片，小图、大图
   goodsImg: [
-    { bigImg: '', smallImg: '' }
+    { Img: '' }
   ]
 });
 
