@@ -1,6 +1,6 @@
 var express = require('express');
 var router = express.Router();
-var { addGoodsForShop, getAllShopByPage, addShop, setShopByIdAsync, addOneEmployeeById, updataShopById } = require('../dao/shopDao.js')
+var { addIpetForShop, addServerForShop, addGoodsForShop, getAllShopByPage, addShop, setShopByIdAsync, addOneEmployeeById, updataShopById } = require('../dao/shopDao.js')
 
 /* GET users listing. */
 router.get('/', function (req, res, next) {
@@ -28,9 +28,17 @@ router.post('/addOneEmployeeByIdAsync', async function (req, res, next) {
 router.post('/updataShopByIdAsync', async function (req, res, next) {
   res.send(await updataShopById(req.body))
 });
-// 通过ID修改门店
+// 通过门店ID增加商品
 router.post('/addGoodsForShopAsync', async function (req, res, next) {
   res.send(await addGoodsForShop(req.body))
+});
+// 通过门店ID增加服务
+router.post('/addServerForShopAsync', async function (req, res, next) {
+  res.send(await addServerForShop(req.body))
+});
+// 通过门店ID增加宠物
+router.post('/addIpetForShopAsync', async function (req, res, next) {
+  res.send(await addIpetForShop(req.body))
 });
 
 

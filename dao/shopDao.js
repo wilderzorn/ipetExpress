@@ -44,3 +44,13 @@ module.exports.addGoodsForShop = async (result) => {
   let { goodsId, _id } = result;
   return await mongoose.model("shop").updateOne({ _id }, { $push: { goodsId } })
 }
+
+module.exports.addServerForShop = async (result) => {
+  let { serviceId, _id } = result;
+  return await mongoose.model("shop").updateOne({ _id }, { $push: { serviceId } })
+}
+
+module.exports.addIpetForShop = async (result) => {
+  let { petId, _id } = result;
+  return await mongoose.model("shop").updateOne({ _id }, { $push: { petId } })
+}
