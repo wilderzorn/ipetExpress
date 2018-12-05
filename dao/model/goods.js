@@ -58,6 +58,10 @@ var goodSchema = new Schema({
   goodsPrice: {
     type: Number
   },
+  // 商品分类：0：食品，1：玩具，2.衣物，3.房子，4.洗护，5.药品，6.户外
+  goodsClassify: {
+    type: Number
+  },
   // 图片，小图、大图
   goodsImg: [
     { Img: '' }

@@ -34,7 +34,7 @@ var serviceSchema = new Schema({
   },
   // 价格,基准价格，会员价和活动价都以它为基准
   servicePrice: {
-    type: String
+    type: Number
   },
   // 服务
   serviceImg: [
