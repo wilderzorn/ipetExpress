@@ -19,7 +19,10 @@ module.exports.getAllShopByPage = async ({ curPage, eachPage }) => {
 
 module.exports.addShop = async ({ shopName, shopLicenceNum, shopLicenceImg, shopAdd, shopLocation, shopCorporate, shopTel, shopImg, shopFeature, shopCommission }) => {
   let result = { shopName, shopLicenceNum, shopLicenceImg, shopAdd, shopLocation, shopCorporate, shopTel, shopImg, shopFeature, shopCommission: Number(shopCommission) }
-  return await mongoose.model("shop").create(result);
+  let obj = await mongoose.model("shop").create(result)
+  let { _id } = obj
+  console.log(_id);
+  return { shopId: _id }
 }
 
 module.exports.setShopByIdAsync = async (result) => {

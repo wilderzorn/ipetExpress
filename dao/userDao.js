@@ -104,3 +104,8 @@ module.exports.getAllUser = async (_id) => {
     .populate("petId")
     .populate("serviceId")
 }
+//获取所有信息
+module.exports.addShopIdForUser = async (data) => {
+  let { _id, shopId } = data
+  return await mongoose.model("users").updateOne({ _id }, { $push: { shopId } }).populate("shopId")
+}
