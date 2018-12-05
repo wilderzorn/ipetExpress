@@ -37,9 +37,9 @@ var serviceSchema = new Schema({
     type: Number
   },
   // 服务
-  serviceImg: [
-    { bigImg: '', smallImg: '' }
-  ]
+  serviceImg: {
+    type: String
+  }
 });
 
 mongoose.model("service", serviceSchema, "service");
