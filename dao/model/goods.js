@@ -63,9 +63,9 @@ var goodSchema = new Schema({
     type: Number
   },
   // 图片，小图、大图
-  goodsImg: [
-    { Img: '' }
-  ]
+  goodsImg: {
+    type: String
+  }
 });
 
 mongoose.model("goods", goodSchema, "goods");
