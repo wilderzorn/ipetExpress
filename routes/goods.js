@@ -1,6 +1,6 @@
 var express = require('express');
 var router = express.Router();
-const { getAllgoods, getAddtodo,updateGoods,storeGoods,removeGoods } = require("../dao/goodsDao.js")
+const { getForGoodsClassify, getAllgoods, getAddtodo, updateGoods, storeGoods, removeGoods } = require("../dao/goodsDao.js")
 
 
 /* GET users listing. */
@@ -31,6 +31,10 @@ router.post('/storeGoods', async function (req, res, next) {
 router.get('/removeGoods', async function (req, res, next) {
   res.send(await removeGoods(req.query))
   // console.log(req.body);
+});
+
+router.get('/getForGoodsClassify', async function (req, res, next) {
+  res.send(await getForGoodsClassify(req.query))
 });
 
 module.exports = router;

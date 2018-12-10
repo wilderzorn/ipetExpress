@@ -13,7 +13,9 @@ module.exports.getAllShopByPage = async ({ curPage, eachPage }) => {
     .skip((result.curPage - 1) * result.eachPage)
     .limit(result.eachPage)
     .sort({ _id: 1 })
-  // .populate("classId")
+    .populate("goodsId")
+    .populate("petId")
+    .populate("serviceId");
   return result;
 }
 
